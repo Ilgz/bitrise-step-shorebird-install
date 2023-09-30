@@ -1,0 +1,38 @@
+#
+# A couple of useful guides & docs:
+#
+# - Main Bitrise CLI docs: https://github.com/bitrise-io/bitrise/tree/master/_docs
+
+# Shorebird Install Docs: https://docs.shorebird.dev/#install-
+title: |-
+  Shorebird Install
+summary: |
+  Installs the Shorebird CLI for use in the workflow. 
+  Recommendation is to put this install step after Flutter is installed. 
+  
+  This step will attempt to configure Shorebird's Flutter version to match exisiting installed Flutter (if one is detected). 
+  Shorebird does not support Flutter versions below 3.10.0.
+
+description: |
+  Installs the Shorebird CLI for use in the workflow. 
+  Recommendation is to put this install step after Flutter is installed. 
+  
+  This step will attempt to configure Shorebird's Flutter version to match exisiting installed Flutter (if one is detected). 
+  Shorebird does not support Flutter versions below 3.10.0.
+website: https://github.com/chillbrodev/bitrise-step-shorebird-install
+source_code_url: https://github.com/chillbrodev/bitrise-step-shorebird-install
+support_url: https://github.com/chillbrodev/bitrise-step-shorebird-install/issues
+type_tags:
+  - installer
+toolkit:
+  bash:
+    entry_file: step.sh
+
+# No Inputs
+
+outputs:
+  - SHOREBIRD_FLUTTER_VERSION:
+    opts:
+      title: "Shorebird Flutter Version"
+      summary: The Flutter version used by Shorebird.
+      description: The Flutter version used by Shorebird.
