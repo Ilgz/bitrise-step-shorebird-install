@@ -2,6 +2,8 @@
 
 Installs the Shorebird CLI for use in the workflow. Attempts to configure the Flutter version to match exisiting installed Flutter. Shorebird does not support Flutter versions below 3.10.0.
 
+Shorebird is exported via [envman](https://github.com/bitrise-io/envman) to be avaiable on PATH.
+
 It is highly recommended that you still install Flutter either through the [Bitrise Flutter Install Step](https://github.com/bitrise-steplib/bitrise-step-flutter-installer) or the [FVM Step](https://github.com/infinum/Install-Flutter-Version-Manager-Bitrise).
 
 ## How to use this Step

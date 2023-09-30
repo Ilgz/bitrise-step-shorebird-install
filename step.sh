@@ -9,6 +9,14 @@ echo "Installing Shorebird CLI"
 # Flutter and Dart you already have installed.
 curl --proto '=https' --tlsv1.2 https://raw.githubusercontent.com/shorebirdtech/install/main/install.sh -sSf | bash 
 
+# Replace PATH to include Shorebird
+envman add --key PATH --value '/Users/vagrant/.shorebird/bin:$PATH'
+
+# Echo path to console
+envman run bash -c 'echo "Modified path: $PATH"'
+
+export PATH="$(echo $HOME)/.shorebird/bin:$PATH"
+
 # Get Flutter version from FVM or Flutter
 extracted_flutter_version="-1"
 which fvm
