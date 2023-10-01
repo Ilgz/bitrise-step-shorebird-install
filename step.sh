@@ -9,22 +9,19 @@ echo "Installing Shorebird CLI"
 # Flutter and Dart you already have installed.
 curl --proto '=https' --tlsv1.2 https://raw.githubusercontent.com/shorebirdtech/install/main/install.sh -sSf | bash 
 
-# Replace PATH to include Shorebird
+# Replace PATH to include Shorebird on Bitrise
 envman add --key PATH --value '/Users/vagrant/.shorebird/bin:$PATH'
 
 # Echo path to console
 envman run bash -c 'echo "Modified path: $PATH"'
 
+# Add to path (Helpful when running step locally)
 export PATH="$(echo $HOME)/.shorebird/bin:$PATH"
 
 # Get Flutter version from FVM or Flutter
 extracted_flutter_version="-1"
-which fvm
+which flutter
 if [ $? -eq 0 ]; then
-    fvm_flutter_version=$(fvm flutter --version)
-    extracted_flutter_version=$(echo "$fvm_flutter_version" | head -n 1 | awk '{print $2}')
-    echo "FVM Flutter Version: $extracted_flutter_version"
-else
     flutter_version=$(flutter --version)
     extracted_flutter_version=$(echo "$flutter_version" | head -n 1 | awk '{print $2}')
     echo "Flutter Version: $extracted_flutter_version"
