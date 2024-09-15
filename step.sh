@@ -28,12 +28,12 @@ if [ $? -eq 0 ]; then
 fi
 
 # Use parsed flutter version to sync Shorebird to installed Flutter
-if [ $extracted_flutter_version != "-1" ]; then
-    shorebird flutter versions use $extracted_flutter_version
-    envman add --key SHOREBIRD_FLUTTER_VERSION --value $extracted_flutter_version
-else 
-    echo "Flutter not detected, skipping Shorebird Sync."
-fi
+# if [ $extracted_flutter_version != "-1" ]; then
+#     shorebird flutter versions use $extracted_flutter_version
+#     envman add --key SHOREBIRD_FLUTTER_VERSION --value $extracted_flutter_version
+# else 
+#     echo "Flutter not detected, skipping Shorebird Sync."
+# fi
 
 # --- Exit codes:
 # The exit code of your Step is very important. If you return
